@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Janane Eshwar (Janane Eshwar) — AI-Blockchain Engineer & Product Leader. Portfolio showcasing AI+Blockchain systems, tokenization, DeFi, smart contracts, and venture work." />
+  <title>Janane Eshwar — AI • Blockchain • Tokenization</title>
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Janane Eshwar — AI • Blockchain • Tokenization" />
+  <meta property="og:description" content="AI-Blockchain Engineer & Product Leader. Building LLM-powered data agents, tokenization platforms, and secure smart contract systems." />
+  <meta property="og:type" content="website" />
+
+  <!-- Lightweight icons (inline SVGs used; no external deps) -->
+  <style>
+    :root{
+      --bg: #0b0f17;
+      --panel: rgba(255,255,255,.06);
+      --panel2: rgba(255,255,255,.09);
+      --text: rgba(255,255,255,.92);
+      --muted: rgba(255,255,255,.68);
+      --faint: rgba(255,255,255,.45);
+      --line: rgba(255,255,255,.12);
+      --brand: #7c5cff;
+      --brand2: #00d4ff;
+      --ok: #32d583;
+      --warn: #fdb022;
+      --shadow: 0 18px 50px rgba(0,0,0,.45);
+      --radius: 18px;
+      --radius2: 26px;
+      --max: 1100px;
+      --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:auto}
+    body{
+      margin:0;
+      min-height:100vh;
+      overflow-y:auto;
+      font-family:var(--sans);
+      color:var(--text);
+      background:
+        radial-gradient(900px 500px at 15% 10%, rgba(124,92,255,.22), transparent 55%),
+        radial-gradient(900px 500px at 85% 20%, rgba(0,212,255,.16), transparent 50%),
+        radial-gradient(700px 380px at 45% 95%, rgba(50,213,131,.10), transparent 50%),
+        var(--bg);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    a:hover{opacity:.95}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:22px 18px 60px}
+
+    /* Top nav */
+    .nav{
+      position:sticky; top:0; z-index:50;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      background: linear-gradient(to bottom, rgba(11,15,23,.78), rgba(11,15,23,.40));
+      border-bottom:1px solid var(--line);
+    }
+    .nav .inner{max-width:var(--max); margin:0 auto; padding:12px 18px; display:flex; align-items:center; gap:14px;}
+    .brand{
+      display:flex; align-items:center; gap:10px;
+      font-weight:700; letter-spacing:.2px;
+    }
+    .brand .mark{
+      width:32px; height:32px; border-radius:10px;
+      background: linear-gradient(135deg, rgba(124,92,255,1), rgba(0,212,255,1));
+      box-shadow: 0 12px 30px rgba(124,92,255,.22);
+      position:relative;
+    }
+    .brand .mark:after{
+      content:"";
+      position:absolute; inset:9px;
+      border-radius:7px;
+      border:1px solid rgba(255,255,255,.45);
+      opacity:.9;
+    }
+    .spacer{flex:1}
+    .links{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
+    .chip{
+      padding:8px 10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      transition:transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .chip:hover{transform:translateY(-1px); border-color: rgba(255,255,255,.22); background: rgba(255,255,255,.06)}
+
+    /* Hero */
+    .hero{
+      padding:44px 0 22px;
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    .card{
+      background: var(--panel);
+      border:1px solid var(--line);
+      border-radius: var(--radius2);
+      box-shadow: var(--shadow);
+    }
+    .hero .left{padding:30px 26px; position:relative; overflow:hidden;}
+    .hero .left:before{
+      content:"";
+      position:absolute;
+      width:420px; height:420px;
+      right:-220px; top:-220px;
+      background: radial-gradient(circle at 30% 30%, rgba(0,212,255,.32), transparent 55%),
+                  radial-gradient(circle at 60% 60%, rgba(124,92,255,.30), transparent 55%);
+      filter: blur(2px);
+      opacity:.9;
+    }
+
+    .kicker{
+      display:inline-flex; align-items:center; gap:10px;
+      border:1px solid var(--line);
+      background: rgba(255,255,255,.04);
+      padding:8px 12px;
+      border-radius:999px;
+      color:var(--muted);
+      font-size:13px;
+      position:relative;
+      z-index:1;
+    }
+    .dot{
+      width:9px; height:9px; border-radius:99px;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+      box-shadow: 0 0 0 4px rgba(124,92,255,.16);
+    }
+
+    h1{margin:14px 0 10px; font-size:42px; line-height:1.05; letter-spacing:-.8px; position:relative; z-index:1;}
+    .subtitle{margin:0; color:var(--muted); font-size:16px; line-height:1.6; position:relative; z-index:1; max-width:58ch;}
+
+    .ctaRow{display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; position:relative; z-index:1;}
+    .btn{
+      display:inline-flex; align-items:center; gap:10px;
+      padding:11px 14px;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.14);
+      background: rgba(255,255,255,.06);
+      color:var(--text);
+      font-weight:600;
+      font-size:14px;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.22)}
+    .btn.primary{
+      background: linear-gradient(135deg, rgba(124,92,255,.95), rgba(0,212,255,.85));
+      border-color: rgba(255,255,255,.18);
+      box-shadow: 0 16px 36px rgba(124,92,255,.18);
+    }
+    .btn.primary:hover{filter:saturate(1.05)}
+
+    .hero .right{padding:22px; display:flex; flex-direction:column; gap:12px;}
+
+    .mini{
+      padding:14px 14px;
+      border-radius: var(--radius);
+      background: rgba(255,255,255,.04);
+      border:1px solid var(--line);
+    }
+    .mini h3{margin:0 0 6px; font-size:14px; letter-spacing:.2px}
+    .mini p{margin:0; color:var(--muted); font-size:13px; line-height:1.45}
+
+    .badges{display:flex; flex-wrap:wrap; gap:8px; margin-top:8px;}
+    .badge{
+      font-size:12px;
+      padding:6px 9px;
+      border-radius: 999px;
+      border:1px solid var(--line);
+      color:var(--muted);
+      background: rgba(255,255,255,.03);
+    }
+
+    /* Sections */
+    section{margin-top:22px}
+    .sectionHead{display:flex; align-items:flex-end; justify-content:space-between; gap:14px; margin:26px 0 12px;}
+    .sectionHead h2{margin:0; font-size:20px; letter-spacing:-.2px}
+    .sectionHead .hint{margin:0; color:var(--muted); font-size:13px}
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap:12px;
+    }
+
+    .span-6{grid-column: span 6}
+    .span-7{grid-column: span 7}
+    .span-5{grid-column: span 5}
+    .span-4{grid-column: span 4}
+    .span-8{grid-column: span 8}
+    .span-12{grid-column: span 12}
+
+    .panel{padding:18px; border-radius: var(--radius2); background: var(--panel); border:1px solid var(--line);}
+    .panel:hover{border-color: rgba(255,255,255,.18)}
+    .panel h3{margin:0 0 8px; font-size:15px}
+    .panel p{margin:0; color:var(--muted); font-size:14px; line-height:1.55}
+
+    .list{margin:10px 0 0; padding:0; list-style:none; display:grid; gap:8px}
+    .li{display:flex; gap:10px; align-items:flex-start; color:var(--muted); font-size:14px; line-height:1.5}
+    .tick{width:18px; height:18px; flex:0 0 18px; margin-top:2px}
+
+    /* Timeline */
+    .timeline{display:grid; gap:12px}
+    .job{padding:16px; border-radius: var(--radius2); background: rgba(255,255,255,.04); border:1px solid var(--line);}
+    .jobTop{display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap}
+    .job h3{margin:0; font-size:15px}
+    .meta{color:var(--faint); font-size:13px}
+    .job ul{margin:10px 0 0; padding:0 0 0 18px; color:var(--muted); display:grid; gap:6px}
+    .job li{line-height:1.5; font-size:14px}
+
+    /* Projects */
+    .pillRow{display:flex; flex-wrap:wrap; gap:8px; margin-top:10px}
+    .pill{font-family:var(--mono); font-size:12px; padding:6px 9px; border-radius:999px; border:1px solid var(--line); color:rgba(255,255,255,.72); background: rgba(255,255,255,.03)}
+
+    /* Footer */
+    footer{margin-top:26px; padding:18px; border-top:1px solid var(--line); color:var(--faint); font-size:13px}
+
+    /* Modal */
+    .modalBackdrop{position:fixed; inset:0; background: rgba(0,0,0,.55); display:none; align-items:center; justify-content:center; padding:18px; z-index:200}
+    .modal{max-width:760px; width:100%; border-radius: 22px; background: rgba(16,22,35,.88); border:1px solid rgba(255,255,255,.14); box-shadow: var(--shadow); overflow:hidden}
+    .modal header{display:flex; align-items:center; justify-content:space-between; padding:14px 14px; border-bottom:1px solid rgba(255,255,255,.10)}
+    .modal header h3{margin:0; font-size:14px; letter-spacing:.2px}
+    .modal .body{padding:16px; color:var(--muted); line-height:1.6; font-size:14px}
+    .x{cursor:pointer; padding:8px 10px; border-radius: 12px; border:1px solid rgba(255,255,255,.12); background: rgba(255,255,255,.05)}
+    .x:hover{background: rgba(255,255,255,.07)}
+
+    /* Responsive */
+    @media (max-width: 900px){
+      .hero{grid-template-columns: 1fr;}
+      h1{font-size:36px}
+    }
+    @media (max-width: 720px){
+      .span-6,.span-7,.span-5,.span-4,.span-8{grid-column: span 12}
+      .links{display:none}
+    }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      .chip,.btn{transition:none}
+      .btn:hover,.chip:hover{transform:none}
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">
+    <div class="inner">
+      <a class="brand" href="#top" aria-label="Home">
+        <span class="mark" aria-hidden="true"></span>
+        <span>Janane Eshwar</span>
+      </a>
+      <div class="spacer"></div>
+      <nav class="links" aria-label="Primary">
+        <a class="chip" href="#highlights">Highlights</a>
+        <a class="chip" href="#experience">Experience</a>
+        <a class="chip" href="#ventures">Ventures</a>
+        <a class="chip" href="#tokenization">Tokenization</a>
+        <a class="chip" href="#skills">Skills</a>
+        <a class="chip" href="#contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <main id="top" class="wrap">
+    <!-- HERO -->
+    <div class="hero">
+      <div class="card left">
+        <div class="kicker"><span class="dot" aria-hidden="true"></span><span>AI • Blockchain • Product Delivery</span></div>
+        <h1>Building secure, intelligent<br/>blockchain systems.</h1>
+        <p class="subtitle">
+          I design and ship AI-powered blockchain platforms—LLM-driven data agents, tokenized asset workflows, and robust smart contracts—built for scalability, security, and real-world adoption.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn primary" href="#contact" aria-label="Contact Jan">
+            <span aria-hidden="true">✦</span>
+            <span>Let’s collaborate</span>
+          </a>
+          <button class="btn" id="openResume" type="button">
+            <span aria-hidden="true">📄</span>
+            <span>Resume snapshot</span>
+          </button>
+          <a class="btn" href="#tokenization">
+            <span aria-hidden="true">⬡</span>
+            <span>Tokenization focus</span>
+          </a>
+        </div>
+
+        <div class="badges" aria-label="Key badges" style="margin-top:16px; position:relative; z-index:1;">
+          <span class="badge">Certified Blockchain Expert</span>
+          <span class="badge">Certified Cryptocurrency Trader</span>
+          <span class="badge">AI + LLM Systems</span>
+          <span class="badge">Smart Contract Auditing</span>
+          <span class="badge">Tokenization / Vaults (ERC-4626)</span>
+        </div>
+      </div>
+
+      <aside class="card right">
+        <div class="mini">
+          <h3>Signature strengths</h3>
+          <p>LLM-powered extraction & verification, semantic search, secure smart contracts, and production-grade delivery across AI + blockchain stacks.</p>
+        </div>
+        <div class="mini">
+          <h3>What I build</h3>
+          <p>AI-backed supply chain intelligence, decentralized verification workflows, DeFi trading & lending products, tokenized vaults, NFT/gaming ecosystems.</p>
+        </div>
+        <div class="mini">
+          <h3>Leadership</h3>
+          <p>End-to-end ownership: roadmaps, requirements, technical design reviews, QA strategy, CI/CD automation, and release readiness.</p>
+        </div>
+      </aside>
+    </div>
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights">
+      <div class="sectionHead">
+        <h2>Highlights</h2>
+        <p class="hint">A quick read on impact and caliber</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel span-7">
+          <h3>AI–Blockchain Framework (Supply Chain Mining)</h3>
+          <p>
+            Built an AI-Blockchain framework using LLMs and autonomous agents to scrape, extract, validate, and structure third-party supply-chain data—then connect it to blockchain applications for verifiable provenance.
+          </p>
+          <div class="pillRow">
+            <span class="pill">LLMs (GPT/Claude/Gemini)</span>
+            <span class="pill">MCP multi-agent</span>
+            <span class="pill">Vector search</span>
+            <span class="pill">Pydantic JSON</span>
+            <span class="pill">On-chain verification</span>
+          </div>
+        </div>
+
+        <div class="panel span-5">
+          <h3>Certified + Specialized</h3>
+          <p>Certified Blockchain Expert and Certified Cryptocurrency Trader with hands-on delivery in DeFi, tokenization, smart contracts, and secure auditing.</p>
+          <ul class="list">
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Certified Applied AI Engineer</span>
+            </li>
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Certified Ethereum Blockchain Developer</span>
+            </li>
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Certified QA Lead</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="panel span-6">
+          <h3>Authored White Papers</h3>
+          <p>
+            Authored two white papers covering blockchain asset management, vault mechanisms, and tokenization—bridging technical design with business-ready frameworks.
+          </p>
+        </div>
+
+        <div class="panel span-6">
+          <h3>Blockchain Asset Management</h3>
+          <p>
+            Designed concepts for customized asset-management funds combining precious metals + crypto exposure (e.g., “Crypto20”), including vault-based strategies and programmable assets.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+      <div class="sectionHead">
+        <h2>Experience</h2>
+        <p class="hint">Production delivery across AI, DeFi, and smart contracts</p>
+      </div>
+
+      <div class="timeline">
+        <div class="job">
+          <div class="jobTop">
+            <div>
+              <h3>Lead AI–Blockchain Developer / Product & QA Lead — SIMBA Chain</h3>
+              <div class="meta">Oct 2021 – Present • USA</div>
+            </div>
+            <div class="meta">AI agents • Semantic search • Smart contracts</div>
+          </div>
+          <ul>
+            <li>Designed AI-powered backend services using LLMs to extract entities from unstructured data and build structured datasets for blockchain analytics.</li>
+            <li>Built multi-agent architectures (MCP) for state sharing, contextual refinement, and fault-tolerant processing in production.</li>
+            <li>Engineered semantic search & risk analytics for supply-chain intelligence (relationships, compliance signals, provenance).</li>
+            <li>Designed and tested ERC-20 / ERC-721 contracts with secure controls, modular architecture, and gas optimization.</li>
+            <li>Integrated AI agents into CI/CD for audit summarization and test coverage estimation to improve release quality.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="jobTop">
+            <div>
+              <h3>Senior Blockchain Engineer / Delivery Lead — DeFi Trading Platform</h3>
+              <div class="meta">Sep 2020 – Oct 2021</div>
+            </div>
+            <div class="meta">Trading • Lending • Yield • Reliability</div>
+          </div>
+          <ul>
+            <li>Contributed to a high-volume crypto trading platform with margin trading, limit orders, lending/borrowing, yield farming, and reward distribution.</li>
+            <li>Supported beta launches including tokenized loan products (e.g., zero-interest loans) and ensured release readiness.</li>
+            <li>Built automated testing frameworks (Selenium) and strengthened SDLC quality standards to reduce regression risk.</li>
+          </ul>
+        </div>
+
+        <div class="job">
+          <div class="jobTop">
+            <div>
+              <h3>Smart Contract Auditing — DeFi Protocol</h3>
+              <div class="meta">Sep 2020 – Oct 2021</div>
+            </div>
+            <div class="meta">Hardhat • Truffle • CI/CD security</div>
+          </div>
+          <ul>
+            <li>Led automated and manual security validation with unit/integration/E2E suites (Hardhat, Truffle, Docker).</li>
+            <li>Performed code reviews and static analysis to identify vulnerabilities, edge cases, and logic flaws prior to deployment.</li>
+            <li>Produced audit/coverage reports and partnered with developers to remediate findings and harden releases.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- VENTURES -->
+    <section id="ventures">
+      <div class="sectionHead">
+        <h2>Ventures & Thought Leadership</h2>
+        <p class="hint">Building ecosystems and publishing frameworks</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel span-8">
+          <h3>Founder — ANSH Blockchain Services</h3>
+          <p>
+            Founded ANSH Blockchain Services and contributed to decentralized products and ecosystems:
+          </p>
+          <ul class="list">
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>DEX contributions and DeFi product development</span>
+            </li>
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Cryptocurrency asset backup / custody-oriented product concepts</span>
+            </li>
+            <li class="li">
+              <svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span>Blockchain gaming ecosystems: NFT assets, tokenized rewards, player-owned economies</span>
+            </li>
+          </ul>
+          <div class="pillRow">
+            <span class="pill">NFT marketplaces</span>
+            <span class="pill">Staking pools</span>
+            <span class="pill">Upgradeable contracts</span>
+            <span class="pill">Telemetry & analytics</span>
+          </div>
+        </div>
+
+        <div class="panel span-4">
+          <h3>Trading & Market Exposure</h3>
+          <p>
+            Certified cryptocurrency trader with experience building and validating trading platform workflows and DeFi financial products.
+          </p>
+          <div class="pillRow">
+            <span class="pill">Margin</span>
+            <span class="pill">Limit orders</span>
+            <span class="pill">Lending</span>
+            <span class="pill">Borrowing</span>
+            <span class="pill">Yield</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOKENIZATION -->
+    <section id="tokenization">
+      <div class="sectionHead">
+        <h2>Tokenization & Asset Management</h2>
+        <p class="hint">Vaults, funds, ETFs, and programmable assets</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel span-6">
+          <h3>Tokenized Vaults (ERC-4626)</h3>
+          <p>
+            Documented and proposed architectures leveraging tokenized vaults to standardize deposits/withdrawals, improve liquidity abstraction, and enable composable yield strategies across protocols.
+          </p>
+          <div class="pillRow">
+            <span class="pill">ERC-4626</span>
+            <span class="pill">Composable yields</span>
+            <span class="pill">Programmable assets</span>
+            <span class="pill">Governance</span>
+          </div>
+        </div>
+
+        <div class="panel span-6">
+          <h3>Customized Funds: Precious Metals + Crypto</h3>
+          <p>
+            Designed product concepts for blockchain-based asset management with customized funds blending precious metals and diversified crypto baskets (e.g., “Crypto20”).
+          </p>
+          <div class="pillRow">
+            <span class="pill">Custodial vaults</span>
+            <span class="pill">Fractionalization</span>
+            <span class="pill">Redemption</span>
+            <span class="pill">Compliance</span>
+          </div>
+        </div>
+
+        <div class="panel span-12">
+          <h3>Tokenization of ETFs & Trading</h3>
+          <p>
+            Explored and delivered tokenization strategies for ETF-like products and trading workflows—covering issuance, transfers, vesting, staking, redemption, and cross-platform interoperability.
+          </p>
+          <div class="pillRow">
+            <span class="pill">Issuance</span>
+            <span class="pill">Transfer controls</span>
+            <span class="pill">Vesting</span>
+            <span class="pill">Staking</span>
+            <span class="pill">Redemption</span>
+            <span class="pill">Interoperability</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILLS -->
+    <section id="skills">
+      <div class="sectionHead">
+        <h2>Skills</h2>
+        <p class="hint">Technical depth + delivery discipline</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel span-6">
+          <h3>AI / Data</h3>
+          <ul class="list">
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>LLM integration (GPT/Claude/Gemini) for extraction & validation</span></li>
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Agentic pipelines (MCP), semantic search, and analytics</span></li>
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Python development; structured outputs with Pydantic</span></li>
+          </ul>
+        </div>
+
+        <div class="panel span-6">
+          <h3>Blockchain / Security</h3>
+          <ul class="list">
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Solidity smart contracts (ERC-20 / ERC-721); tokenized vault patterns</span></li>
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Smart contract audits, coverage & CI/CD-integrated testing</span></li>
+            <li class="li"><svg class="tick" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20 7L10 17l-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>DeFi product experience: trading, lending/borrowing, yield mechanisms</span></li>
+          </ul>
+        </div>
+
+        <div class="panel span-12">
+          <h3>Delivery / Quality</h3>
+          <p>
+            Strong SDLC practices: coding standards, peer reviews, Git workflows, automated builds, testing, release management, and risk mitigation across Agile delivery cycles.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="sectionHead">
+        <h2>Contact</h2>
+        <p class="hint">Open to consulting, product leadership, and engineering work</p>
+      </div>
+
+      <div class="grid">
+        <div class="panel span-8">
+          <h3>Let’s build something ambitious</h3>
+          <p>
+            If you’re exploring tokenization, DeFi platforms, AI-assisted audits, or agentic data intelligence—reach out.
+          </p>
+          <div class="ctaRow" style="margin-top:12px">
+            <a class="btn primary" href="mailto:janane.eshwar@gmail.com">Email: janane.eshwar@gmail.com</a>
+            <a class="btn" href="tel:+17326667712">Call: +1 (732) 666-7712</a>
+          </div>
+          <p style="margin-top:12px; color:var(--faint); font-size:13px">Location: New Jersey, USA</p>
+        </div>
+
+        <div class="panel span-4">
+          <h3>Quick links</h3>
+          <ul class="list" style="margin-top:8px">
+            <li class="li"><span style="font-family:var(--mono); color:rgba(255,255,255,.78)">#</span><a href="#experience">Experience timeline</a></li>
+            <li class="li"><span style="font-family:var(--mono); color:rgba(255,255,255,.78)">#</span><a href="#tokenization">Tokenization focus</a></li>
+            <li class="li"><span style="font-family:var(--mono); color:rgba(255,255,255,.78)">#</span><a href="#ventures">ANSH Blockchain Services</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div style="display:flex; flex-wrap:wrap; justify-content:space-between; gap:10px; align-items:center;">
+        <div>© <span id="year"></span> Jan Esh (Janane Eshwar)</div>
+        <div style="color:var(--faint)">Built as a single-file portfolio site • Dark-mode first • Fast & responsive</div>
+      </div>
+    </footer>
+  </main>
+
+  <!-- Modal: Resume Snapshot -->
+  <div class="modalBackdrop" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal">
+      <header>
+        <h3 id="modalTitle">Resume snapshot</h3>
+        <button class="x" id="closeModal" aria-label="Close">✕</button>
+      </header>
+      <div class="body" id="modalBody">
+        <p><strong>What you’ll find on this site</strong></p>
+        <ul>
+          <li>AI + Blockchain frameworks (LLM extraction, agentic pipelines, on-chain verification)</li>
+          <li>Tokenization & asset management (vault patterns, ETF tokenization, compliance considerations)</li>
+          <li>DeFi trading platform delivery + smart contract auditing</li>
+          <li>Founder work: ANSH Blockchain Services (DEX, asset backup concepts, gaming ecosystems)</li>
+        </ul>
+        <p style="margin-top:12px; color:rgba(255,255,255,.62)">Tip: Edit this modal text to include LinkedIn, GitHub, publications, or project URLs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- JSON-LD for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Janane Eshwar",
+    "alternateName": "Jan Esh",
+    "jobTitle": "AI-Blockchain Engineer / Product Leader",
+    "address": {"@type": "PostalAddress", "addressRegion": "NJ", "addressCountry": "US"},
+    "email": "mailto:janane.eshwar@gmail.com",
+    "telephone": "+1-732-666-7712",
+    "knowsAbout": [
+      "Blockchain", "Tokenization", "DeFi", "Smart Contracts", "Smart Contract Auditing",
+      "ERC-20", "ERC-721", "ERC-4626", "LLMs", "AI Agents", "Semantic Search"
+    ]
+  }
+  </script>
+
+  <script>
+    // small UX helpers
+    const modal = document.getElementById('modal');
+    const openBtn = document.getElementById('openResume');
+    const closeBtn = document.getElementById('closeModal');
+
+    function openModal(){
+      modal.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+      closeBtn.focus();
+    }
+    function closeModal(){
+      modal.style.display = 'none';
+      document.body.style.overflow = '';
+      openBtn.focus();
+    }
+
+    openBtn.addEventListener('click', openModal);
+    closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if(e.target === modal) closeModal(); });
+    document.addEventListener('keydown', (e) => { if(e.key === 'Escape' && modal.style.display === 'flex') closeModal(); });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
